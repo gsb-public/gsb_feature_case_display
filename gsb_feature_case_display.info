@@ -1,21 +1,14 @@
 name = GSB Feature Case Display
 core = 7.x
 package = GSB
-version = 7.x-1.0
+version = WP-2354-dev
 project = gsb_feature_case_display
 dependencies[] = entityreference
 dependencies[] = eva
 dependencies[] = views
-datestamp = 1386284199
+datestamp = 1386780246
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = gsb_case_listing
 features[views_view][] = gsb_sunet_id_autocomplete
 features_exclude[dependencies][ctools] = ctools
-
-
-; Information added by drush on 2013-12-11
-version = "WP-2354-dev"
-project = "gsb_feature_case_display"
-datestamp = "1386780246"
-
