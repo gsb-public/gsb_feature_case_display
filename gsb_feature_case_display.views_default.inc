@@ -394,11 +394,6 @@ function gsb_feature_case_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_author']['delta_offset'] = '0';
-  /* Sort criterion: Field: Graduation Year (field_year) */
-  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
-  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -552,7 +547,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Academic Area';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'academic-area';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
     2 => '2',
@@ -602,7 +597,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator_id'] = 'term_node_tid_depth_1_op';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['label'] = 'Topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator'] = 'term_node_tid_depth_1_op';
-  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['identifier'] = 'term_node_tid_depth_1';
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['identifier'] = 'topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['remember_roles'] = array(
     2 => '2',
@@ -657,6 +652,8 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['gsb_case_listing'] = $view;
 
   $view = new view();
