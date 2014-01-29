@@ -433,6 +433,63 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['title'] = 'Stanford Case Studies';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'show-more-less show-more-less-num-3 show-more-less-min-5';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Document Link */
+  $handler->display->display_options['fields']['field_link_document']['id'] = 'field_link_document';
+  $handler->display->display_options['fields']['field_link_document']['table'] = 'field_data_field_link_document';
+  $handler->display->display_options['fields']['field_link_document']['field'] = 'field_link_document';
+  $handler->display->display_options['fields']['field_link_document']['label'] = '';
+  $handler->display->display_options['fields']['field_link_document']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_document']['alter']['text'] = '<a href="[field_link_document-url]" alt="PDF">PDF</a>';
+  $handler->display->display_options['fields']['field_link_document']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_document']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_document']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Author */
+  $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
+  $handler->display->display_options['fields']['field_author']['field'] = 'field_author';
+  $handler->display->display_options['fields']['field_author']['label'] = '';
+  $handler->display->display_options['fields']['field_author']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_author']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_author']['delta_offset'] = '0';
+  /* Field: Field: Graduation Year */
+  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
+  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
+  $handler->display->display_options['fields']['field_year']['label'] = '';
+  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['entity_type'] = 'node';
   $handler->display->display_options['bundles'] = array(
     0 => 'faculty',
