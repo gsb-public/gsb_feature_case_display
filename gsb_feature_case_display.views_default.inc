@@ -314,6 +314,8 @@ function gsb_feature_case_display_views_default_views() {
 
   /* Display: Case Filters */
   $handler = $view->new_display('panel_pane', 'Case Filters', 'panel_pane_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'content-pane-listing';
   $handler->display->display_options['pane_title'] = 'Cases';
   $handler->display->display_options['pane_category']['name'] = 'Content Panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
