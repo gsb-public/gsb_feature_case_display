@@ -434,6 +434,19 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'show-more-less show-more-less-num-3 show-more-less-min-5';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Item ID */
+  $handler->display->display_options['fields']['field_item_id']['id'] = 'field_item_id';
+  $handler->display->display_options['fields']['field_item_id']['table'] = 'field_data_field_item_id';
+  $handler->display->display_options['fields']['field_item_id']['field'] = 'field_item_id';
+  $handler->display->display_options['fields']['field_item_id']['label'] = '';
+  $handler->display->display_options['fields']['field_item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_item_id']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
