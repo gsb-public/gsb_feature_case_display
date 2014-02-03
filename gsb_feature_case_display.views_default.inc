@@ -440,6 +440,19 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['title'] = 'Stanford Case Studies';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'show-more-less show-more-less-num-3 show-more-less-min-5';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_item_id' => 'field_item_id',
+    'title' => 'title',
+    'field_link_document' => 'field_link_document',
+  );
+  $handler->display->display_options['row_options']['separator'] = '|';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Item ID */
   $handler->display->display_options['fields']['field_item_id']['id'] = 'field_item_id';
