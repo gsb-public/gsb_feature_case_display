@@ -116,56 +116,6 @@ function gsb_feature_case_display_views_default_views() {
     161 => 0,
     166 => 0,
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 2;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    151 => 0,
-    16 => 0,
-    21 => 0,
-    61 => 0,
-    56 => 0,
-    71 => 0,
-    66 => 0,
-    26 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    91 => 0,
-    96 => 0,
-    101 => 0,
-    106 => 0,
-    116 => 0,
-    121 => 0,
-    126 => 0,
-    131 => 0,
-    136 => 0,
-    141 => 0,
-    146 => 0,
-    156 => 0,
-    161 => 0,
-    166 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Author (field_author) */
   $handler->display->display_options['filters']['field_author_value']['id'] = 'field_author_value';
   $handler->display->display_options['filters']['field_author_value']['table'] = 'field_data_field_author';
@@ -174,7 +124,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_author_value']['group'] = 2;
   $handler->display->display_options['filters']['field_author_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_author_value']['expose']['operator_id'] = 'field_author_value_op';
-  $handler->display->display_options['filters']['field_author_value']['expose']['label'] = 'Author (field_author)';
+  $handler->display->display_options['filters']['field_author_value']['expose']['label'] = 'Author';
   $handler->display->display_options['filters']['field_author_value']['expose']['operator'] = 'field_author_value_op';
   $handler->display->display_options['filters']['field_author_value']['expose']['identifier'] = 'field_author_value';
   $handler->display->display_options['filters']['field_author_value']['expose']['remember_roles'] = array(
@@ -222,7 +172,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['operator_id'] = 'field_academic_area_unlimited_tid_op';
-  $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['label'] = 'Academic Area (field_academic_area_unlimited)';
+  $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['label'] = 'Academic Area';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['operator'] = 'field_academic_area_unlimited_tid_op';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['identifier'] = 'field_academic_area_unlimited_tid';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['expose']['multiple'] = TRUE;
@@ -270,7 +220,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator_id'] = 'field_business_insight_topic_tid_op';
-  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Business Insight Topic (field_business_insight_topic)';
+  $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['label'] = 'Business Insight Topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['operator'] = 'field_business_insight_topic_tid_op';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['identifier'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['expose']['multiple'] = TRUE;
@@ -323,7 +273,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 'more_link';
+  $handler->display->display_options['allow']['more_link'] = 0;
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
@@ -331,6 +281,9 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['exposed_form_overrides'] = array(
     'nid' => '',
+    'field_author_value' => '',
+    'field_academic_area_unlimited_tid' => '',
+    'field_business_insight_topic_tid' => '',
   );
   $export['case_filters'] = $view;
 
