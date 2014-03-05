@@ -1,9 +1,10 @@
 name = GSB Feature Case Display
 core = 7.x
 package = GSB
-version = 7.x-3.2
+version = 7.x-3.5
 project = gsb_feature_case_display
 dependencies[] = better_exposed_filters
+dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entityreference
 dependencies[] = eva
@@ -16,4 +17,3 @@ features[features_api][] = api:2
 features[views_view][] = case_filters
 features[views_view][] = gsb_case_listing
 features[views_view][] = gsb_sunet_id_autocomplete
-features_exclude[dependencies][ctools] = ctools
