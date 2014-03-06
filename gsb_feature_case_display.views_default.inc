@@ -826,6 +826,7 @@ function gsb_feature_case_display_views_default_views() {
       ),
     ),
   );
+  $handler->display->display_options['fields']['field_profile_visibility']['use_form_element'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
