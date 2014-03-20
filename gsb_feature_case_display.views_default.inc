@@ -762,7 +762,7 @@ function gsb_feature_case_display_views_default_views() {
     'field_year' => 'field_year',
     'field_profile_visibility' => 'field_profile_visibility',
   );
-  $handler->display->display_options['style_options']['default'] = 'field_item_id';
+  $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'field_item_id' => array(
       'sortable' => 1,
