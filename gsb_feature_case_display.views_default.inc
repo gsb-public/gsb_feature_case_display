@@ -213,7 +213,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['vocabulary'] = 'academic_area';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Business Insight Topic (field_business_insight_topic) */
+  /* Filter criterion: Content: Additional Topics (field_business_insight_topic) */
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['id'] = 'field_business_insight_topic_tid';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['table'] = 'field_data_field_business_insight_topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['field'] = 'field_business_insight_topic_tid';
@@ -398,7 +398,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Authors (field_authors) */
+  /* Relationship: Content: Author &amp; Co-Authors (field_authors) */
   $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
   $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
@@ -431,22 +431,6 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Document Link */
-  $handler->display->display_options['fields']['field_link_document']['id'] = 'field_link_document';
-  $handler->display->display_options['fields']['field_link_document']['table'] = 'field_data_field_link_document';
-  $handler->display->display_options['fields']['field_link_document']['field'] = 'field_link_document';
-  $handler->display->display_options['fields']['field_link_document']['label'] = '';
-  $handler->display->display_options['fields']['field_link_document']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_document']['alter']['text'] = '<a href="[field_link_document-url]" alt="PDF">PDF</a>';
-  $handler->display->display_options['fields']['field_link_document']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_document']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link_document']['settings'] = array(
-    'conditions' => array(
-      0 => array(
-        'condition' => '',
-      ),
-    ),
-  );
   /* Field: Content: Author */
   $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
   $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
@@ -510,7 +494,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'case' => 'case',
   );
-  /* Filter criterion: Field collection item: Profile Visibility (field_profile_visibility) */
+  /* Filter criterion: Field: Profile Visibility (field_profile_visibility) */
   $handler->display->display_options['filters']['field_profile_visibility_value']['id'] = 'field_profile_visibility_value';
   $handler->display->display_options['filters']['field_profile_visibility_value']['table'] = 'field_data_field_profile_visibility';
   $handler->display->display_options['filters']['field_profile_visibility_value']['field'] = 'field_profile_visibility_value';
@@ -810,7 +794,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = 'There are no cases for this faculty.';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Authors (field_authors) */
+  /* Relationship: Content: Author &amp; Co-Authors (field_authors) */
   $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
   $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
@@ -861,7 +845,7 @@ function gsb_feature_case_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Field collection item: Profile Visibility */
+  /* Field: Field: Profile Visibility */
   $handler->display->display_options['fields']['field_profile_visibility']['id'] = 'field_profile_visibility';
   $handler->display->display_options['fields']['field_profile_visibility']['table'] = 'field_data_field_profile_visibility';
   $handler->display->display_options['fields']['field_profile_visibility']['field'] = 'field_profile_visibility';
