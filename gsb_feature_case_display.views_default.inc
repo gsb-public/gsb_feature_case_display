@@ -573,6 +573,60 @@ function gsb_feature_case_display_views_default_views() {
         ),
       ),
     ),
+    'field_free_case_value' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_has_harvard_link_value' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_has_case_center_value' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
@@ -595,6 +649,10 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -725,6 +783,165 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Free Case (field_free_case) */
+  $handler->display->display_options['filters']['field_free_case_value']['id'] = 'field_free_case_value';
+  $handler->display->display_options['filters']['field_free_case_value']['table'] = 'field_data_field_free_case';
+  $handler->display->display_options['filters']['field_free_case_value']['field'] = 'field_free_case_value';
+  $handler->display->display_options['filters']['field_free_case_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_free_case_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_free_case_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['operator_id'] = 'field_free_case_value_op';
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['label'] = 'Free Case';
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['operator'] = 'field_free_case_value_op';
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['identifier'] = 'field_free_case_value';
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    71 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    66 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+  );
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_free_case_value']['group_info']['label'] = 'Free Case (field_free_case)';
+  $handler->display->display_options['filters']['field_free_case_value']['group_info']['identifier'] = 'field_free_case_value';
+  $handler->display->display_options['filters']['field_free_case_value']['group_info']['optional'] = FALSE;
+  $handler->display->display_options['filters']['field_free_case_value']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['field_free_case_value']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  /* Filter criterion: Content: Has Harvard Link (field_has_harvard_link) */
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['id'] = 'field_has_harvard_link_value';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['table'] = 'field_data_field_has_harvard_link';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['field'] = 'field_has_harvard_link_value';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['operator_id'] = 'field_has_harvard_link_value_op';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['label'] = 'Has Harvard Link (field_has_harvard_link)';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['operator'] = 'field_has_harvard_link_value_op';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['identifier'] = 'field_has_harvard_link_value';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    71 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    66 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+  );
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Has Case Center (field_has_case_center) */
+  $handler->display->display_options['filters']['field_has_case_center_value']['id'] = 'field_has_case_center_value';
+  $handler->display->display_options['filters']['field_has_case_center_value']['table'] = 'field_data_field_has_case_center';
+  $handler->display->display_options['filters']['field_has_case_center_value']['field'] = 'field_has_case_center_value';
+  $handler->display->display_options['filters']['field_has_case_center_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_has_case_center_value']['group'] = 2;
+  $handler->display->display_options['filters']['field_has_case_center_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['operator_id'] = 'field_has_case_center_value_op';
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['label'] = 'Has Case Center';
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['operator'] = 'field_has_case_center_value_op';
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['identifier'] = 'field_has_case_center_value';
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    71 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    66 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+  );
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['reduce'] = TRUE;
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
