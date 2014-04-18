@@ -793,7 +793,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_free_case_value']['group'] = 2;
   $handler->display->display_options['filters']['field_free_case_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_free_case_value']['expose']['operator_id'] = 'field_free_case_value_op';
-  $handler->display->display_options['filters']['field_free_case_value']['expose']['label'] = 'Free Case';
+  $handler->display->display_options['filters']['field_free_case_value']['expose']['label'] = 'Available to download at no charge';
   $handler->display->display_options['filters']['field_free_case_value']['expose']['operator'] = 'field_free_case_value_op';
   $handler->display->display_options['filters']['field_free_case_value']['expose']['identifier'] = 'field_free_case_value';
   $handler->display->display_options['filters']['field_free_case_value']['expose']['multiple'] = TRUE;
@@ -852,7 +852,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_has_harvard_link_value']['group'] = 2;
   $handler->display->display_options['filters']['field_has_harvard_link_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['operator_id'] = 'field_has_harvard_link_value_op';
-  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['label'] = 'Has Harvard Link (field_has_harvard_link)';
+  $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['label'] = 'Available for purchase at Harvard Business Publishing';
   $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['operator'] = 'field_has_harvard_link_value_op';
   $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['identifier'] = 'field_has_harvard_link_value';
   $handler->display->display_options['filters']['field_has_harvard_link_value']['expose']['multiple'] = TRUE;
@@ -902,7 +902,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_has_case_center_value']['group'] = 2;
   $handler->display->display_options['filters']['field_has_case_center_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_has_case_center_value']['expose']['operator_id'] = 'field_has_case_center_value_op';
-  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['label'] = 'Has Case Center';
+  $handler->display->display_options['filters']['field_has_case_center_value']['expose']['label'] = 'Available for purchase at The Case Centre';
   $handler->display->display_options['filters']['field_has_case_center_value']['expose']['operator'] = 'field_has_case_center_value_op';
   $handler->display->display_options['filters']['field_has_case_center_value']['expose']['identifier'] = 'field_has_case_center_value';
   $handler->display->display_options['filters']['field_has_case_center_value']['expose']['multiple'] = TRUE;
