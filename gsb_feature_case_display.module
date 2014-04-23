@@ -5,3 +5,27 @@
  */
 
 include_once 'gsb_feature_case_display.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ */
+function gsb_feature_case_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'gsb_case_listing') {
+    $form['secondary']['availability'] = array(
+      '#prefix' => '<div class="form-item form-type-select case-availability"><label>' . t('Availability') . '</label>',
+      '#suffix' => '</div>',
+    );
+
+    // Loop through each availability field and group them.
+    foreach (array('field_free_case_value', 'field_has_harvard_link_value', 'field_has_case_center_value') as $key) {
+      if (!isset($form['secondary'][$key])) {
+        continue;
+      }
+
+      $form['secondary'][$key]['#options'][1] = $form['secondary'][$key]['#title'];
+      $form['secondary'][$key]['#title_display'] = 'invisible';
+      $form['secondary']['availability'][$key] = $form['secondary'][$key];
+      unset($form['secondary'][$key]);
+    }
+  }
+}
