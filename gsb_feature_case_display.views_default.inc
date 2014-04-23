@@ -726,7 +726,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth_1']['group'] = 1;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator_id'] = 'term_node_tid_depth_1_op';
-  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['label'] = 'Topics';
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['label'] = 'Additional Topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator'] = 'term_node_tid_depth_1_op';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['identifier'] = 'topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['multiple'] = TRUE;
