@@ -502,6 +502,13 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_profile_visibility_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Content: Product Type (field_product_type) */
+  $handler->display->display_options['filters']['field_product_type_value']['id'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['table'] = 'field_data_field_product_type';
+  $handler->display->display_options['filters']['field_product_type_value']['field'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['value'] = array(
+    'Case' => 'Case',
+  );
   $handler->display->display_options['entity_type'] = 'node';
   $handler->display->display_options['bundles'] = array(
     0 => 'faculty',
@@ -942,6 +949,13 @@ function gsb_feature_case_display_views_default_views() {
     166 => 0,
   );
   $handler->display->display_options['filters']['field_has_case_center_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Product Type (field_product_type) */
+  $handler->display->display_options['filters']['field_product_type_value']['id'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['table'] = 'field_data_field_product_type';
+  $handler->display->display_options['filters']['field_product_type_value']['field'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['value'] = array(
+    'Case' => 'Case',
+  );
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -1116,6 +1130,13 @@ function gsb_feature_case_display_views_default_views() {
     'case' => 'case',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Product Type (field_product_type) */
+  $handler->display->display_options['filters']['field_product_type_value']['id'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['table'] = 'field_data_field_product_type';
+  $handler->display->display_options['filters']['field_product_type_value']['field'] = 'field_product_type_value';
+  $handler->display->display_options['filters']['field_product_type_value']['value'] = array(
+    'Case' => 'Case',
+  );
   $handler->display->display_options['entity_type'] = 'node';
   $handler->display->display_options['bundles'] = array(
     0 => 'faculty',
