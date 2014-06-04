@@ -411,6 +411,13 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['label'] = 'Faculty';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Item ID */
   $handler->display->display_options['fields']['field_item_id']['id'] = 'field_item_id';
   $handler->display->display_options['fields']['field_item_id']['table'] = 'field_data_field_item_id';
@@ -424,13 +431,6 @@ function gsb_feature_case_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Author */
   $handler->display->display_options['fields']['field_author']['id'] = 'field_author';
   $handler->display->display_options['fields']['field_author']['table'] = 'field_data_field_author';
@@ -494,7 +494,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'case' => 'case',
   );
-  /* Filter criterion: Field: Profile Visibility (field_profile_visibility) */
+  /* Filter criterion: Field: Display on Profile (field_profile_visibility) */
   $handler->display->display_options['filters']['field_profile_visibility_value']['id'] = 'field_profile_visibility_value';
   $handler->display->display_options['filters']['field_profile_visibility_value']['table'] = 'field_data_field_profile_visibility';
   $handler->display->display_options['filters']['field_profile_visibility_value']['field'] = 'field_profile_visibility_value';
@@ -1072,7 +1072,7 @@ function gsb_feature_case_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Field: Profile Visibility */
+  /* Field: Field: Display on Profile */
   $handler->display->display_options['fields']['field_profile_visibility']['id'] = 'field_profile_visibility';
   $handler->display->display_options['fields']['field_profile_visibility']['table'] = 'field_data_field_profile_visibility';
   $handler->display->display_options['fields']['field_profile_visibility']['field'] = 'field_profile_visibility';
