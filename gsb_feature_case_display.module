@@ -10,7 +10,7 @@ include_once 'gsb_feature_case_display.features.inc';
  * Implements hook_form_alter().
  */
 function gsb_feature_case_display_form_alter(&$form, &$form_state) {
-  if ($form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
+  if (!empty($form_state['view']) && $form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
     // set the nids argument field into the exposed portion of the config form
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
     $form['exposed']['arguments'] = $form['arguments'];
