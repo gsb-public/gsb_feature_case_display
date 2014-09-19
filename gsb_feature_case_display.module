@@ -7,6 +7,28 @@
 include_once 'gsb_feature_case_display.features.inc';
 
 /**
+ * Implements hook_form_alter().
+ */
+function gsb_feature_case_display_form_alter(&$form, &$form_state) {
+  if ($form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
+    // set the nids argument field into the exposed portion of the config form
+    $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
+    $form['exposed']['arguments'] = $form['arguments'];
+    $form['exposed']['arguments']['#weight'] = -98;
+    $form['arguments']['#access'] = FALSE;
+    $form['#validate'][] = 'gsb_feature_case_display_pane_config_validate';
+  }
+}
+
+/**
+ * Validate handler for views_content_views_panes_content_type_edit_form.
+ *  - Stores the arguments nid field values in pane config.
+ */
+function gsb_feature_case_display_pane_config_validate(&$form, &$form_state) {
+  $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
+}
+
+/**
  * Implements hook_form_FORM_ID_alter() for views_exposed_form.
  */
 function gsb_feature_case_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
