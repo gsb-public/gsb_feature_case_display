@@ -39,7 +39,9 @@ function gsb_feature_case_display_form_alter(&$form, &$form_state) {
  *  - Stores the arguments nid field values in pane config.
  */
 function gsb_feature_case_display_pane_config_validate(&$form, &$form_state) {
-  $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
+  if (!empty($form_state['values']['exposed'])) {
+    $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
+  }
 }
 
 /**
