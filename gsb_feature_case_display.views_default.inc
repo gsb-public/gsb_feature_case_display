@@ -1012,6 +1012,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_product_type_value']['value'] = array(
     'Case' => 'Case',
   );
+  $handler->display->display_options['pane_title'] = 'Cases';
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
