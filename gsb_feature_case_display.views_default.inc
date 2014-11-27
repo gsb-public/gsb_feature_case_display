@@ -1013,7 +1013,7 @@ function gsb_feature_case_display_views_default_views() {
     'Case' => 'Case',
   );
   $handler->display->display_options['pane_title'] = 'Cases';
-  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: EVA Field Form */
