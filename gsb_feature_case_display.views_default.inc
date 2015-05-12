@@ -42,6 +42,11 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['footer']['area']['label'] = 'See All Case Studies';
   $handler->display->display_options['footer']['area']['content'] = '<div class="see-all"><a href="/faculty-research/case-studies">See All Case Studies</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  /* Relationship: Content: Author &amp; Co-Authors (field_authors) */
+  $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
+  $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
+  $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
+  $handler->display->display_options['relationships']['field_authors_value']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -82,6 +87,59 @@ function gsb_feature_case_display_views_default_views() {
     'case' => 'case',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Field: Faculty Name (field_person_fac_single_ref) */
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['id'] = 'field_person_fac_single_ref_target_id';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['table'] = 'field_data_field_person_fac_single_ref';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['field'] = 'field_person_fac_single_ref_target_id';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['group'] = 2;
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['expose']['operator_id'] = 'field_person_fac_single_ref_target_id_op';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['expose']['label'] = 'Faculty Author';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['expose']['operator'] = 'field_person_fac_single_ref_target_id_op';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['expose']['identifier'] = 'field_person_fac_single_ref_target_id';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    71 => 0,
+    61 => 0,
+    171 => 0,
+    56 => 0,
+    66 => 0,
+    31 => 0,
+    36 => 0,
+    201 => 0,
+    41 => 0,
+    91 => 0,
+    146 => 0,
+    136 => 0,
+    26 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    141 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+    176 => 0,
+    181 => 0,
+    186 => 0,
+    191 => 0,
+    206 => 0,
+    211 => 0,
+  );
   /* Filter criterion: Content: Academic Area (field_academic_area_unlimited) */
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['id'] = 'field_academic_area_unlimited_tid';
   $handler->display->display_options['filters']['field_academic_area_unlimited_tid']['table'] = 'field_data_field_academic_area_unlimited';
