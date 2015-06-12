@@ -20,10 +20,21 @@ function gsb_feature_case_display_module_implements_alter(&$implementations, $ho
 }
 
 /**
- * Implements hook_form_alter().
+ * Validate handler for views_content_views_panes_content_type_edit_form.
+ *  - Stores the arguments nid field values in pane config.
  */
-function gsb_feature_case_display_form_alter(&$form, &$form_state) {
-  if (!empty($form_state['view']) && $form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
+function gsb_feature_case_display_pane_config_validate(&$form, &$form_state) {
+  if (!empty($form_state['values']['exposed'])) {
+    $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
+  }
+}
+
+/**
+  * Implements hook_form_FORM_ID_alter().
+  */
+function gsb_feature_case_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
+  // Alter 'Case filters' content pane settings form.
+  if ($form_state['pane']->subtype == 'case_filters-panel_pane_1' && $form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
     $form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
     // set the nids argument field into the exposed portion of the config form
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
@@ -31,17 +42,40 @@ function gsb_feature_case_display_form_alter(&$form, &$form_state) {
     $form['exposed']['arguments'] = $form['arguments'];
     $form['exposed']['arguments']['#weight'] = -98;
     $form['arguments']['#access'] = FALSE;
+
+    $conf = $form_state['conf'];
+    $item['title_link'] = array(
+      '#title' => t('URL'),
+      '#type' => 'textfield',
+      '#weight' => -99,
+      '#default_value' => !empty($conf['title_link']) ? $conf['title_link'] : '',
+    );
+    $form['override_title']['#weight'] = -100;
+    $form = gsb_misc_fixes_associative_insert($form, 'override_title', $item);
+
+    $form['#submit'][] = 'case_filters_pane_config_submit';
+
     $form['#validate'][] = 'gsb_feature_case_display_pane_config_validate';
   }
 }
 
 /**
- * Validate handler for views_content_views_panes_content_type_edit_form.
- *  - Stores the arguments nid field values in pane config.
+ * Submit handler for views_content_views_panes_content_type_edit_form.
+ *  - Save title link field in pane config.
  */
-function gsb_feature_case_display_pane_config_validate(&$form, &$form_state) {
-  if (!empty($form_state['values']['exposed'])) {
-    $form_state['values']['arguments']['nid'] = $form_state['values']['exposed']['arguments']['nid'];
+function case_filters_pane_config_submit($form, &$form_state) {
+  $form_state['conf']['title_link'] = $form_state['values']['title_link'];
+}
+
+/**
+ * Implements hook_panels_pane_content_alter().
+ *  - Alter Act Project Filters content pane title to be linked to a custom URL.
+ */
+function gsb_feature_case_display_panels_pane_content_alter($content, $pane, $args, $context) {
+  if ($content && $content->subtype == 'case_filters-panel_pane_1') {
+    if (!empty($pane->configuration['title_link'])) {
+      $content->title = l($content->title, $pane->configuration['title_link']);
+    }
   }
 }
 
