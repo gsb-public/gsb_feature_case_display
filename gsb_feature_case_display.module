@@ -53,9 +53,8 @@ function gsb_feature_case_display_form_views_content_views_panes_content_type_ed
     $form['override_title']['#weight'] = -100;
     $form = gsb_misc_fixes_associative_insert($form, 'override_title', $item);
 
-    $form['#submit'][] = 'case_filters_pane_config_submit';
-
     $form['#validate'][] = 'gsb_feature_case_display_pane_config_validate';
+    $form['#submit'][] = 'case_filters_pane_config_submit';
   }
 }
 
