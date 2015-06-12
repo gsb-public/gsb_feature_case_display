@@ -68,7 +68,7 @@ function case_filters_pane_config_submit($form, &$form_state) {
 
 /**
  * Implements hook_panels_pane_content_alter().
- *  - Alter Act Project Filters content pane title to be linked to a custom URL.
+ *  - Alter Case Filters content pane title to be linked to a custom URL.
  */
 function gsb_feature_case_display_panels_pane_content_alter($content, $pane, $args, $context) {
   if ($content && $content->subtype == 'case_filters-panel_pane_1') {
