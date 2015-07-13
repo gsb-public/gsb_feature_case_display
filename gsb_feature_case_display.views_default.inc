@@ -551,6 +551,8 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['pane_category']['name'] = 'Customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['set_view_mode'] = 'set_view_mode';
+  $handler->display->display_options['allow']['set_style_plugin'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
@@ -561,9 +563,13 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['exposed_form_overrides'] = array(
-    'field_author_value' => '',
-    'field_academic_area_unlimited_tid' => '',
-    'field_business_insight_topic_tid' => '',
+    'filters' => array(
+      'field_person_fac_single_ref_target_id' => '',
+      'field_academic_area_unlimited_tid' => '',
+      'field_business_insight_topic_tid' => '',
+      'field_centers_research_programs_tid' => '',
+      'field_tag_tid' => '',
+    ),
   );
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(

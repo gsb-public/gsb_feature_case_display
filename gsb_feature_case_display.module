@@ -35,6 +35,15 @@ function gsb_feature_case_display_pane_config_validate(&$form, &$form_state) {
 function gsb_feature_case_display_form_views_content_views_panes_content_type_edit_form_alter(&$form, &$form_state) {
   // Alter 'Case filters' content pane settings form.
   if ($form_state['pane']->subtype == 'case_filters-panel_pane_1' && $form_state['view']->name == 'case_filters' && $form_state['view']->current_display == 'panel_pane_1') {
+    //Hide all display modes except compact and expanded
+
+    $view_modes = $form['view_mode']['#options'];
+    foreach($view_modes as $key=>$value) {
+      if($key !== 'compact' AND $key !== 'expanded'){
+        unset($form['view_mode']['#options'][$key]);
+      }
+    }
+
     $form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
     // set the nids argument field into the exposed portion of the config form
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
