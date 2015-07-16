@@ -32,9 +32,13 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'views_content_pane';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'compact';
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_year|field_year_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'compact';
   /* Relationship: Content: Author &amp; Co-Authors (field_authors) */
   $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
@@ -377,8 +381,22 @@ function gsb_feature_case_display_views_default_views() {
       'any_label' => NULL,
       'filter_rewrite_values' => NULL,
     ),
-    'field_author_value' => array(
+    'field_person_fac_single_ref_target_id' => array(
       'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '99999',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
@@ -437,6 +455,7 @@ function gsb_feature_case_display_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -488,6 +507,107 @@ function gsb_feature_case_display_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_centers_research_programs_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_tag_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
             'secondary_label' => NULL,
             'collapsible_label' => NULL,
             'combine_rewrite' => NULL,
@@ -537,6 +657,18 @@ function gsb_feature_case_display_views_default_views() {
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'compact';
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_year|field_year_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'compact';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -561,7 +693,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['exposed_form_overrides'] = array(
     'filters' => array(
       'field_person_fac_single_ref_target_id' => '',
