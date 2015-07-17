@@ -51,6 +51,8 @@ function gsb_feature_case_display_form_views_content_views_panes_content_type_ed
     $form['exposed']['arguments'] = $form['arguments'];
     $form['exposed']['arguments']['#weight'] = -97;
     $form['arguments']['#access'] = FALSE;
+    $form['comments']['#access'] = FALSE;
+    $form['links']['#access'] = FALSE;
 
     $conf = $form_state['conf'];
     $item['title_link'] = array(
