@@ -88,7 +88,7 @@ function case_filters_pane_config_submit($form, &$form_state) {
 function gsb_feature_case_display_panels_pane_content_alter($content, $pane, $args, $context) {
   if ($content && $content->subtype == 'case_filters-panel_pane_1') {
     if (!empty($pane->configuration['title_link'])) {
-      $content->title = l($content->title, $pane->configuration['title_link']);
+      $content->title = decode_entities(l($content->title, $pane->configuration['title_link']));
     }
   }
 }
