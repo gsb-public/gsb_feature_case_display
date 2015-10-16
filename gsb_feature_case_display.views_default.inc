@@ -37,7 +37,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['row_options']['grouping'] = 0;
   $handler->display->display_options['row_options']['advanced'] = 0;
   $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
-  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_year|field_year_value';
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_year_of_publication|field_year_of_publication_value';
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'compact';
   /* Relationship: Content: Author &amp; Co-Authors (field_authors) */
   $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
@@ -51,11 +51,11 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Field: Graduation Year (field_year) */
-  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
-  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -781,11 +781,11 @@ function gsb_feature_case_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_author']['delta_offset'] = '0';
-  /* Sort criterion: Field: Graduation Year (field_year) */
-  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
-  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -873,20 +873,21 @@ function gsb_feature_case_display_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_author']['delta_offset'] = '0';
-  /* Field: Field: Graduation Year */
-  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
-  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
-  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
-  $handler->display->display_options['fields']['field_year']['label'] = '';
-  $handler->display->display_options['fields']['field_year']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_year']['alter']['text'] = '[field_author][field_year]';
-  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_year']['settings'] = array(
+  /* Field: Content: Year */
+  $handler->display->display_options['fields']['field_year_of_publication']['id'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['label'] = '';
+  $handler->display->display_options['fields']['field_year_of_publication']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_year_of_publication']['alter']['text'] = '[field_author][field_year]';
+  $handler->display->display_options['fields']['field_year_of_publication']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year_of_publication']['settings'] = array(
     'format_type' => 'year',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'show',
     'conditions' => array(
       0 => array(
@@ -1797,7 +1798,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'field_item_id' => 'field_item_id',
     'title' => 'title',
-    'field_year' => 'field_year',
+    'field_year_of_publication' => 'field_year_of_publication',
     'field_profile_visibility' => 'field_profile_visibility',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -1816,7 +1817,7 @@ function gsb_feature_case_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_year' => array(
+    'field_year_of_publication' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1876,18 +1877,19 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Field: Graduation Year */
-  $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
-  $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
-  $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
-  $handler->display->display_options['fields']['field_year']['label'] = 'Publication Year';
-  $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_year']['settings'] = array(
+  /* Field: Content: Year */
+  $handler->display->display_options['fields']['field_year_of_publication']['id'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['label'] = 'Publication Year';
+  $handler->display->display_options['fields']['field_year_of_publication']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year_of_publication']['settings'] = array(
     'format_type' => 'year',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'show',
     'conditions' => array(
       0 => array(
@@ -1910,11 +1912,11 @@ function gsb_feature_case_display_views_default_views() {
   );
   $handler->display->display_options['fields']['field_profile_visibility']['use_form_element'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Field: Graduation Year (field_year) */
-  $handler->display->display_options['sorts']['field_year_value']['id'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['table'] = 'field_data_field_year';
-  $handler->display->display_options['sorts']['field_year_value']['field'] = 'field_year_value';
-  $handler->display->display_options['sorts']['field_year_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
