@@ -879,7 +879,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
   $handler->display->display_options['fields']['field_year_of_publication']['label'] = '';
   $handler->display->display_options['fields']['field_year_of_publication']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_year_of_publication']['alter']['text'] = '[field_author][field_year]';
+  $handler->display->display_options['fields']['field_year_of_publication']['alter']['text'] = '[field_author][field_year_of_publication]';
   $handler->display->display_options['fields']['field_year_of_publication']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_year_of_publication']['settings'] = array(
     'format_type' => 'year',
