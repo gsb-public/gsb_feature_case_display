@@ -101,6 +101,7 @@ function gsb_feature_case_display_panels_pane_content_alter($content, $pane, $ar
  */
 function gsb_feature_case_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
   if ($form_state['view']->name == 'gsb_case_listing') {
+    $form['#action'] = '';
     $form['secondary']['availability'] = array(
       '#prefix' => '<div class="form-item form-type-select case-availability"><label>' . t('Availability') . '</label>',
       '#suffix' => '</div>',
@@ -117,5 +118,13 @@ function gsb_feature_case_display_form_views_exposed_form_alter(&$form, &$form_s
       $form['secondary']['availability'][$key] = $form['secondary'][$key];
       unset($form['secondary'][$key]);
     }
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
   }
 }
