@@ -251,7 +251,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['vocabulary'] = 'business_insight_topic';
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['hierarchy'] = 1;
   $handler->display->display_options['filters']['field_business_insight_topic_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Circle (Centers and Research Programs) (field_centers_research_programs) */
+  /* Filter criterion: Content: Stanford GSB Affiliations or Initiatives (field_centers_research_programs) */
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['id'] = 'field_centers_research_programs_tid';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['table'] = 'field_data_field_centers_research_programs';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['field'] = 'field_centers_research_programs_tid';
@@ -315,7 +315,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['vocabulary'] = 'centers_research_programs';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['error_message'] = FALSE;
-  /* Filter criterion: Content: Keywords (field_tag) */
+  /* Filter criterion: Field: Keywords (field_tag) */
   $handler->display->display_options['filters']['field_tag_tid']['id'] = 'field_tag_tid';
   $handler->display->display_options['filters']['field_tag_tid']['table'] = 'field_data_field_tag';
   $handler->display->display_options['filters']['field_tag_tid']['field'] = 'field_tag_tid';
@@ -691,7 +691,6 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
-  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
   $handler->display->display_options['exposed_form_overrides'] = array(
     'filters' => array(
@@ -1484,7 +1483,7 @@ function gsb_feature_case_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth_1']['vocabulary'] = 'business_insight_topic';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['error_message'] = FALSE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['depth'] = '10';
-  /* Filter criterion: Content: Circle (Centers and Research Programs) (field_centers_research_programs) */
+  /* Filter criterion: Content: Stanford GSB Affiliations or Initiatives (field_centers_research_programs) */
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['id'] = 'field_centers_research_programs_tid';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['table'] = 'field_data_field_centers_research_programs';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['field'] = 'field_centers_research_programs_tid';
